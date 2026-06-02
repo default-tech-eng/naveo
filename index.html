@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naveo — Blood Support</title>
+<meta name="description" content="Naveo Blood Support: six botanicals and trace minerals in one clear daily ritual. Full amounts on the label, nothing hidden in a blend.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12151B;--surface:#191D26;--ink:#ECE7DD;--muted:#9A9385;--accent:#C6A14C;--line:#2A2F3A;--rad:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.btn{display:inline-block;background:var(--accent);color:#12151B;padding:13px 26px;border-radius:999px;font-weight:600;border:none;cursor:pointer;font-size:.95rem;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(198,161,76,.28)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px;max-width:1140px;margin:0 auto}
+.nav .brand{font-family:'DM Serif Display',serif;font-size:1.7rem;letter-spacing:.02em}
+.nav .brand b{color:var(--accent);font-weight:400}
+.nav .links{display:flex;gap:26px;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.nav .links a:hover{color:var(--accent)}
+@media(max-width:760px){.nav .links{display:none}}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:158px;gap:14px;grid-auto-flow:dense;padding:14px 0 8px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--rad);padding:22px;overflow:hidden;position:relative;opacity:0;transform:translateY(16px) scale(.98);transition:opacity .6s ease,transform .6s ease,border-color .2s}
+.tile.in{opacity:1;transform:none}
+.tile:hover{border-color:var(--accent)}
+.c2{grid-column:span 2}.c3{grid-column:span 3}.r2{grid-row:span 2}
+.photo{padding:0;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.photo:hover img{transform:scale(1.05)}
+.photo .label{position:absolute;left:14px;bottom:12px;background:rgba(18,21,27,.7);backdrop-filter:blur(4px);padding:5px 11px;border-radius:8px;font-size:.74rem;color:var(--ink)}
+
+.hero{background:radial-gradient(120% 120% at 80% 10%,rgba(198,161,76,.16),transparent 60%),var(--surface);display:flex;flex-direction:column;justify-content:space-between}
+.hero .eyebrow{margin-bottom:auto}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.4vw,3rem);line-height:1.04;margin:18px 0 10px}
+.hero p{color:var(--muted);max-width:420px;font-size:.98rem}
+.hero .row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+
+.stat{display:flex;flex-direction:column;justify-content:center}
+.stat .big{font-family:'DM Serif Display',serif;font-size:3rem;line-height:1;color:var(--accent)}
+.stat .lbl{color:var(--muted);font-size:.86rem;margin-top:8px}
+
+.ing{display:flex;flex-direction:column;justify-content:space-between}
+.ing .disc{width:46px;height:46px;border-radius:50%;overflow:hidden;border:1px solid var(--line)}
+.ing .disc img{width:100%;height:100%;object-fit:cover}
+.ing .nm{font-family:'DM Serif Display',serif;font-size:1.18rem;margin-top:10px;line-height:1.1}
+.ing .am{color:var(--accent);font-weight:600;font-size:.86rem}
+.ing .ltn{color:var(--muted);font-size:.72rem}
+
+.say{display:flex;flex-direction:column;justify-content:center}
+.say .q{font-family:'DM Serif Display',serif;font-size:1.5rem;line-height:1.18}
+.say .who{color:var(--muted);font-size:.8rem;margin-top:10px}
+.say .stars{color:var(--accent);letter-spacing:2px;font-size:.85rem;margin-bottom:6px}
+
+.trust{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.trust div{display:flex;gap:10px;align-items:center;font-size:.9rem;color:var(--muted)}
+.trust div b{color:var(--ink)}
+.trust .k{color:var(--accent)}
+
+.factsT{font-size:.8rem}
+.factsT h3{font-family:'DM Serif Display',serif;font-size:1.3rem;border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:8px}
+.factsT .fr{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.factsT .fr b{color:var(--ink)}
+
+.ctaT{background:linear-gradient(135deg,var(--accent),#9c7a2f);color:#12151B;display:flex;flex-direction:column;justify-content:center}
+.ctaT h3{font-family:'DM Serif Display',serif;font-size:1.7rem;line-height:1.05}
+.ctaT p{font-size:.86rem;opacity:.85;margin:6px 0 14px}
+.ctaT a{background:#12151B;color:var(--accent);align-self:flex-start;padding:11px 22px;border-radius:999px;font-weight:600;font-size:.9rem}
+
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.c3{grid-column:span 2}}
+@media(max-width:560px){.bento{grid-template-columns:1fr;grid-auto-rows:auto}.tile{min-height:150px}.c2,.c3{grid-column:span 1}.r2{grid-row:span 1}.hero{min-height:300px}}
+
+/* ORDER */
+.order{padding:60px 0}
+.order h2{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.4vw,2.6rem);text-align:center}
+.order .sub{text-align:center;color:var(--muted);margin:8px auto 30px;max-width:480px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:var(--rad);padding:28px 24px;display:flex;flex-direction:column;position:relative}
+.tier.feat{border-color:var(--accent)}
+.tier .tag{position:absolute;top:-12px;left:24px;background:var(--accent);color:#12151B;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.tier .nm{font-family:'DM Serif Display',serif;font-size:1.4rem}
+.tier .su{color:var(--muted);font-size:.85rem}
+.tier .pr{font-family:'DM Serif Display',serif;font-size:2.6rem;margin:14px 0 0;color:var(--accent)}
+.tier .ea{color:var(--muted);font-size:.84rem;margin-bottom:18px}
+.tier a{margin-top:auto;text-align:center}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}}
+
+.faq{max-width:780px;margin:0 auto;padding:10px 0 60px}
+.faq h2{font-family:'DM Serif Display',serif;font-size:2rem;text-align:center;margin-bottom:18px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between}
+.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";color:var(--accent)}
+.faq details[open] summary:after{content:"–"}
+.faq p{color:var(--muted);margin-top:10px}
+
+footer{border-top:1px solid var(--line);padding:46px 0;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
+footer a:hover{color:var(--accent)}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+.disc-note{font-size:.72rem;opacity:.8;max-width:620px;margin-top:12px;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.tile{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+  <a class="brand" href="index.html">Na<b>v</b>eo</a>
+  <div class="links"><a href="#formula">Formula</a><a href="ingredients.html">Ingredients</a><a href="#order">Order</a></div>
+</nav></header>
+
+<main class="wrap">
+<section class="bento" id="formula">
+  <div class="tile hero c2 r2">
+    <span class="eyebrow">Blood Support</span>
+    <div>
+      <h1>Six actives.<br>One clear daily ritual.</h1>
+      <p>Botanicals and trace minerals traditionally associated with metabolic balance — measured out in full and printed on the label. No proprietary blend.</p>
+      <div class="row"><a class="btn" href="#order">Choose your supply</a><a class="btn ghost" href="ingredients.html">See the formula</a></div>
+    </div>
+  </div>
+
+  <div class="tile photo r2"><!-- Photo: trophygeek (CC BY) via Openverse --><img src="assets/cinnamon.jpg" alt="Cinnamon bark in a glass jar"><span class="label">Cinnamomum</span></div>
+
+  <div class="tile stat"><div class="big">6</div><div class="lbl">active ingredients, every serving</div></div>
+  <div class="tile stat"><div class="big">2×</div><div class="lbl">capsules daily · 30-day supply</div></div>
+
+  <div class="tile say c2"><div class="stars">★★★★★</div><div class="q">"Everything's on the label. No mystery blend, no guessing what I'm taking."</div><div class="who">— D. Friis · 61 · Verified buyer</div></div>
+
+  <div class="tile photo c2"><!-- Photo: Denna Jones (CC BY) via Openverse --><img src="assets/porridge.jpg" alt="Breakfast bowl with berries and seeds"><span class="label">A steady morning</span></div>
+
+  <div class="tile ing"><div class="disc"><img src="assets/mulberry.jpg" alt="White mulberry leaf"></div><div><div class="nm">White Mulberry</div><div class="ltn">Morus alba · leaf</div></div><div class="am">60 mg</div></div>
+  <div class="tile ing"><div class="disc"><img src="assets/juniper.jpg" alt="Juniper berries"></div><div><div class="nm">Juniper</div><div class="ltn">Juniperus · fruit</div></div><div class="am">55 mg</div></div>
+  <div class="tile ing"><div class="disc"><img src="assets/bittermelon.jpg" alt="Bitter melon"></div><div><div class="nm">Bitter Melon</div><div class="ltn">Momordica · fruit</div></div><div class="am">50 mg</div></div>
+  <div class="tile ing"><div class="disc"><img src="assets/barberry.jpg" alt="Barberry, source of berberine"></div><div><div class="nm">Berberine HCL</div><div class="ltn">from Berberis</div></div><div class="am">25 mg</div></div>
+
+  <div class="tile photo r2"><!-- Photo: A Bear Named Bryan (CC BY-NC-SA) via Openverse --><img src="assets/path.jpg" alt="A quiet path"><span class="label">Built for the everyday</span></div>
+
+  <div class="tile factsT c2 r2">
+    <h3>Supplement Facts</h3>
+    <div class="fr"><span>Serving size</span><b>2 capsules</b></div>
+    <div class="fr"><span>Cinnamon Bark</span><b>70 mg</b></div>
+    <div class="fr"><span>White Mulberry Leaf</span><b>60 mg</b></div>
+    <div class="fr"><span>Juniper Extract</span><b>55 mg</b></div>
+    <div class="fr"><span>Bitter Melon Extract</span><b>50 mg</b></div>
+    <div class="fr"><span>Berberine HCL Extract</span><b>25 mg</b></div>
+    <div class="fr"><span>Chromium Picolinate</span><b>200 mcg</b></div>
+    <div style="color:var(--muted);font-size:.7rem;margin-top:8px">Other: Gelatin, Brown Rice Flour, Silicon Dioxide.</div>
+  </div>
+
+  <div class="tile ing"><div class="disc"><img src="assets/capsules.jpg" alt="Chromium capsules"></div><div><div class="nm">Chromium</div><div class="ltn">picolinate · trace mineral</div></div><div class="am">200 mcg</div></div>
+
+  <div class="tile photo"><!-- Photo: jeffk (CC BY) via Openverse --><img src="assets/tea.jpg" alt="Herbal infusion in a glass pot"></div>
+
+  <div class="tile trust">
+    <div><span class="k">↩</span><b>30-day</b>&nbsp;returns on unopened items</div>
+    <div><span class="k">🚚</span>Free&nbsp;<b>EU</b>&nbsp;shipping</div>
+    <div><span class="k">🇺🇸</span>Made in the&nbsp;<b>USA</b></div>
+  </div>
+
+  <div class="tile ctaT c2"><h3>Start your ritual.</h3><p>Three months of Naveo from €37.33 a bottle.</p><a href="#order">Choose your supply →</a></div>
+</section>
+</main>
+
+<section class="order" id="order"><div class="wrap">
+  <h2>Choose your supply</h2>
+  <p class="sub">Same full-disclosure formula in every plan. Longer supplies cost less per bottle.</p>
+  <div class="tiers">
+    <div class="tier"><div class="nm">One Bottle</div><div class="su">30-day supply</div><div class="pr">€54.99</div><div class="ea">€54.99 per bottle</div><a class="btn ghost" href="checkout.html">Select</a></div>
+    <div class="tier feat"><span class="tag">Best value</span><div class="nm">Three Bottles</div><div class="su">90-day supply</div><div class="pr">€111.98</div><div class="ea">€37.33 per bottle · save 32%</div><a class="btn" href="checkout.html">Select →</a></div>
+    <div class="tier"><div class="nm">Two Bottles</div><div class="su">60-day supply</div><div class="pr">€79.98</div><div class="ea">€39.99 per bottle · save 27%</div><a class="btn ghost" href="checkout.html">Select</a></div>
+  </div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>How do I take Naveo?</summary><p>Two capsules daily, with or without food. One bottle holds 60 capsules — a 30-day supply.</p></details>
+  <details><summary>What's in it?</summary><p>Six actives per serving: Cinnamon Bark 70mg, White Mulberry Leaf 60mg, Juniper Extract 55mg, Bitter Melon Extract 50mg, Berberine HCL Extract 25mg, Chromium Picolinate 200mcg. Other ingredients: Gelatin, Brown Rice Flour, Silicon Dioxide.</p></details>
+  <details><summary>Returns?</summary><p>Unopened products can be returned within 30 days of delivery, in original packaging with proof of purchase. Refunds within 14 business days of inspection.</p></details>
+  <details><summary>Shipping?</summary><p>We ship across the EU. Processed within one business day; estimated delivery 3–6 business days after dispatch.</p></details>
+  <details><summary>Made where?</summary><p>In the USA. If you are pregnant, nursing, on medication or managing a medical condition, consult your doctor before use.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <div><strong style="color:var(--ink);font-family:'DM Serif Display',serif;font-size:1.4rem">Naveo</strong><br>Gertil Online Limited<br>167-169 Great Portland Street, 5th Floor<br>London, United Kingdom W1W 5PF<br>Company No. 15389792 · VAT GB465132991<br><a href="mailto:help@naveo.com">help@naveo.com</a>
+  <div class="disc-note">These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</div></div>
+  <div class="foot-links"><a href="ingredients.html">Ingredients</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="returns.html">Returns</a><a href="shipping.html">Shipping</a></div>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),(e.target.dataset.d||0));io.unobserve(e.target);}})},{threshold:.08});
+document.querySelectorAll('.tile').forEach((el,i)=>{el.dataset.d=(i%5)*60;io.observe(el);});
+</script>
+</body>
+</html>
