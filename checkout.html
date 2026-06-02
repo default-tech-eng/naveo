@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head><script>(function(){try{var t=localStorage.getItem('naveo-theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Checkout, Naveo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +63,14 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .success h1{font-size:2.2rem;margin-bottom:10px}
 .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px;margin-right:8px}
 @keyframes sp{to{transform:rotate(360deg)}}
-@media(max-width:860px){.co{grid-template-columns:1fr}.summary{position:static}}</style></head>
+@media(max-width:860px){.co{grid-template-columns:1fr}.summary{position:static}}</style><style id="nv-light">
+:root[data-theme="light"]{--bg:#F1ECE0;--surface:#FFFFFF;--ink:#1B1E25;--muted:#6B6555;--accent:#9A7B2C;--line:#E3DBC9;}
+html{transition:background-color .3s ease}body{transition:background-color .3s ease,color .3s ease}
+#themeToggle{position:fixed;bottom:20px;right:20px;z-index:90;display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--accent);cursor:pointer;font:600 .8rem/1 'Figtree',system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .15s,box-shadow .15s}
+#themeToggle:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.34)}
+#themeToggle .ic{font-size:1rem;line-height:1}
+@media(prefers-reduced-motion:reduce){html,body,#themeToggle{transition:none}}
+</style></head>
 <body>
 <header><nav class="nav"><a class="brand" href="index.html">Naveo</a>
 <div class="links"><a href="index.html#formula">Formula</a><a href="ingredients.html">Ingredients</a><a href="checkout.html">Order</a></div></nav></header>
@@ -172,4 +179,8 @@ document.getElementById("pay").onclick=async()=>{
   setTimeout(()=>{document.getElementById("co").style.display="none";document.querySelector(".summary")&&0;document.getElementById("okEmail").textContent=payload.email;document.getElementById("success").classList.add("show");window.scrollTo(0,0);},900);
 };
 render();
-</script></body></html>
+</script><button id="themeToggle" aria-label="Toggle light and dark mode"><span class="ic">☾</span><span class="lb">Light</span></button>
+<script>(function(){var b=document.getElementById('themeToggle');var d=document.documentElement;
+function sync(){var light=d.getAttribute('data-theme')==='light';b.querySelector('.ic').textContent=light?'☀':'☾';b.querySelector('.lb').textContent=light?'Dark':'Light';}
+sync();
+b.addEventListener('click',function(){var n=d.getAttribute('data-theme')==='light'?'dark':'light';try{localStorage.setItem('naveo-theme',n);}catch(e){}d.setAttribute('data-theme',n);sync();});})();</script></body></html>
